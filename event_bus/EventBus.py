@@ -1,9 +1,8 @@
 from AbstractSubscriber import AbstractSubscriber
 from AbstractEvent import AbstractEvent
-from collections import defaultdict
 
 
-class AbstractEventBus:
+class EventBus:
 
     def __init__(self):
         self.subscribers_queue = set()
@@ -12,7 +11,8 @@ class AbstractEventBus:
         self.subscribers_queue.add(subscriber)
 
     def dispatch(self, event: AbstractEvent):
-        pass
+        self.notifySubscribers(event);
 
-    def getSubscribers(self):
-        pass
+    def notifySubscribers(self, event: AbstractEvent):
+        for ele in self.subscribers_queue:
+            ele.handleEvent(event)

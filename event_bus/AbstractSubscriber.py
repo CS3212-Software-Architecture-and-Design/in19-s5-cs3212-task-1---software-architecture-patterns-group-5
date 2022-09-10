@@ -5,5 +5,5 @@ from AbstractEvent import AbstractEvent;
 class AbstractSubscriber(ABC):
 
     @abstractmethod
-    def handle(self, event: AbstractEvent):
+    def handleEvent(self, event: AbstractEvent):
         pass
