@@ -11,8 +11,11 @@ class EventBus:
         self.subscribers_queue.add(subscriber)
 
     def dispatch(self, event: AbstractEvent):
-        self.notifySubscribers(event);
+        return self.notifySubscribers(event);
 
     def notifySubscribers(self, event: AbstractEvent):
+        count=0
         for ele in self.subscribers_queue:
+            count+=1
             ele.handleEvent(event)
+        return count
