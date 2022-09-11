@@ -15,6 +15,7 @@ class TestEventBus(unittest.TestCase):
         eventbus.subscribe(subscriber1)
         eventbus.subscribe(subscriber2)
         eventbus.subscribe(subscriber3)
+        eventbus.remove_sub(subscriber1)
         post = Post("Asia cup", "Final SL vs PAK")
 
         self.assertEqual(eventbus.dispatch(post), 2)
