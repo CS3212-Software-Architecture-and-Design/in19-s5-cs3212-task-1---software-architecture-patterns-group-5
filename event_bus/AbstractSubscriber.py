@@ -8,3 +8,4 @@ class AbstractSubscriber(ABC):
     @abstractmethod
     def handleEvent(self, event: AbstractEvent):
         pass
+

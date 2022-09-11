@@ -1,6 +1,7 @@
 
 from event_bus.AbstractEvent import AbstractEvent
 from event_bus.AbstractSubscriber import AbstractSubscriber
+from event_bus.EventBus import EventBus
 
 
 class SubscriberImp1(AbstractSubscriber):
@@ -9,3 +10,5 @@ class SubscriberImp1(AbstractSubscriber):
 
     def handleEvent(self, event: AbstractEvent):
         event.onEvent(self.name)
+
+

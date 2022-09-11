@@ -17,7 +17,7 @@ class TestEventBus(unittest.TestCase):
         eventbus.subscribe(subscriber3)
         post = Post("Asia cup", "Final SL vs PAK")
 
-        self.assertEqual(eventbus.dispatch(post), 3)
+        self.assertEqual(eventbus.dispatch(post), 2)
 
 
 if __name__ == '__main__':

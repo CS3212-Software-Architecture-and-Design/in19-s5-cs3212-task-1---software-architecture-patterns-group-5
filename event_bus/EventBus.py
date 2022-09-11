@@ -13,10 +13,14 @@ class EventBus:
         return self.notifySubscribers(event);
 
     def notifySubscribers(self, event: AbstractEvent):
-        count=0
+        count = 0
         for ele in self.subscribers_queue:
-            count+=1
+            count += 1
             ele.handleEvent(event)
         return count
+
     def getLenghthofQueue(self):
         return len(self.subscribers_queue)
+
+    def remove_sub(self, sub: AbstractSubscriber):
+        self.subscribers_queue.remove(sub)
