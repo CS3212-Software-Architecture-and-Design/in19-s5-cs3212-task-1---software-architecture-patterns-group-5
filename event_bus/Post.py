@@ -8,3 +8,8 @@ class Post(AbstractEvent):
 
     def onEvent(self,subscriberName):
         print(subscriberName+" "+"likes on "+ self.title)
+    def getTitle(self):
+         return self.title
+
+    def getDescription(self):
+        return self.description
