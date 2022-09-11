@@ -1,4 +1,4 @@
-from AbstractEvent import AbstractEvent
+from event_bus.AbstractEvent import AbstractEvent
 
 
 class Post(AbstractEvent):

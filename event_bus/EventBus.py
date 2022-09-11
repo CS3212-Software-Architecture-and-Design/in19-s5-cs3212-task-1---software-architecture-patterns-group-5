@@ -1,5 +1,4 @@
-from AbstractSubscriber import AbstractSubscriber
-from AbstractEvent import AbstractEvent
+from event_bus import AbstractSubscriber, AbstractEvent
 
 
 class EventBus:
@@ -11,8 +10,13 @@ class EventBus:
         self.subscribers_queue.add(subscriber)
 
     def dispatch(self, event: AbstractEvent):
-        self.notifySubscribers(event);
+        return self.notifySubscribers(event);
 
     def notifySubscribers(self, event: AbstractEvent):
+        count=0
         for ele in self.subscribers_queue:
+            count+=1
             ele.handleEvent(event)
+        return count
+    def getLenghthofQueue(self):
+        return len(self.subscribers_queue)

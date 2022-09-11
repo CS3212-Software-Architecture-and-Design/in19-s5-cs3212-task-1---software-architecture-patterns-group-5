@@ -1,5 +1,6 @@
-from AbstractSubscriber import AbstractSubscriber
+
 from event_bus.AbstractEvent import AbstractEvent
+from event_bus.AbstractSubscriber import AbstractSubscriber
 
 
 class SubscriberImp1(AbstractSubscriber):

@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
-from AbstractEvent import AbstractEvent;
+
+from event_bus import AbstractEvent
 
 
 class AbstractSubscriber(ABC):
